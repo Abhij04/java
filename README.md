@@ -1,3 +1,32 @@
+#include<ESP32Servo.h>
+
+const int servoPin = 27;
+Servo servo;
+
+void setup(){
+  servo.attach(servoPin,500,2400);
+}
+
+int pos = 0;
+void loop(){
+  for(pos=0;pos<=180;pos+=1){
+    servo.write(pos);
+    delay(10);
+  }
+  for(pos=180;pos>=0;pos-=1){
+    servo.write(pos);
+    delay(10);
+  }
+}
+
+/*
+connection
+servo motor : 
+GND -> GND 
+V+ -> 5 v
+PWM ->  27 GPIO pin
+
+*/
 // Gas buzzer
 #define gas_sensor_pin  34
 #define buzzer_pin 26
