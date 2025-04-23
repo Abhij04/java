@@ -245,4 +245,21 @@ void loop() {
 // push button :
 // cross connection
 // 26 pin and another cross GND;
+// led blinking
 
+void setup() {
+  pinMode(4,OUTPUT);
+}
+
+void loop() {
+  digitalWrite(4, HIGH);
+  delay(1000);
+
+  digitalWrite(4,LOW);
+  delay(250);
+
+}
+
+//connection:
+// a -> GND
+// c -> Resistor -> 4 
